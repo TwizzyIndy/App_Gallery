@@ -24,7 +24,8 @@ app.set("views", "");
 
 // Connecting to Atlas mongoDb
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const connectionString = `mongodb://${uri}:27017`;
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
 connection
   .once("open", () => {
