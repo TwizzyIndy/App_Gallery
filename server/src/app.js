@@ -30,7 +30,7 @@ connection
   .once("open", () => {
     console.log("Atlas Db Connected Successfully");
   })
-  .catch((err) => console.log(err));
+  .on('error', (err) => console.log(err));
 // -------------------------
 
 app.get("/", (req, res) => {
